@@ -12,3 +12,4 @@ D:\Interview Preparation-MS\LeetCodePractice\LeetCodePractice\obj\Debug\net8.0\r
 D:\Interview Preparation-MS\LeetCodePractice\LeetCodePractice\obj\Debug\net8.0\LeetCodePractice.pdb
 D:\Interview Preparation-MS\LeetCodePractice\LeetCodePractice\obj\Debug\net8.0\LeetCodePractice.genruntimeconfig.cache
 D:\Interview Preparation-MS\LeetCodePractice\LeetCodePractice\obj\Debug\net8.0\ref\LeetCodePractice.dll
+D:\Interview Preparation-MS\LeetCodePractice\LeetCodePractice\obj\Debug\net8.0\LeetCodePractice.sourcelink.json
