@@ -1,8 +1,0 @@
-# Ignore Visual Studio cache
-.vs/
-bin/
-obj/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
