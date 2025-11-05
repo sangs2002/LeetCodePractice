@@ -37,7 +37,8 @@ namespace LeetCodePractice
 
 
             Easy easy = new Easy();
-            easy.easy("hello");
+            easy.ScoreofString("hello");
+            easy.LastWord("Hello World");
            
         }
     }
