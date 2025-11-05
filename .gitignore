@@ -1,0 +1,26 @@
+# Visual Studio temporary files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]emp/
+
+# IDE settings
+*.rsuser
+*.userprefs
+.vscode/
+
+# Other common ignore patterns
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
