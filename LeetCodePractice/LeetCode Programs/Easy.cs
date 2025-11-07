@@ -81,10 +81,79 @@
             }
         }
 
-               
 
 
-                #endregion
+
+        #endregion
+
+        #region 3498. Reverse Degree of a String
+
+        //Input: s = "abc"
+
+        //Output: 148
+
+        //The reversed degree is 26 + 50 + 72 = 148.
+        public void reverse(string s)
+        {
+
+
+            int p = 26;
+            int o = 71;
+            int k = 0;
+
+            Dictionary<char, int> dic = new Dictionary<char, int>();
+            List<int> list = new List<int>();
+
+            for (char i = 'a'; i <= 'z'; i++)
+            {
+                int op = (int)i - o;
+
+                dic[i] = op - k;
+
+                k++;
+                o++;
+
+            }
+
+            foreach (char c in s)
+            {
+
+                {
+                    if (dic.ContainsKey(c))
+                    {
+
+                        list.Add(dic[c]);
+
+                    }
+
+                }
+             }
+
+                int T = 1;
+                int G = 0;
+            int z = 0;
+
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    {
+
+                        G = list[i] * T;
+
+                    z = z + G;
+
+                        T++;
+
+
+                    }
+
+                }
+            Console.WriteLine(z);
+
+
+
+        }
+        #endregion
 
     }
 }

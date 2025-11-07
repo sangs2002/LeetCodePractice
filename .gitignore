@@ -1,26 +1,22 @@
-# Visual Studio temporary files
-.vs/
+# Ignore build output directories
 bin/
 obj/
+
+# Ignore Visual Studio temporary files
+.vs/
 *.user
 *.suo
-*.userosscache
-*.sln.docstates
 
-# Build results
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Tt]emp/
+# Ignore system files
+*.DS_Store
+Thumbs.db
 
-# IDE settings
-*.rsuser
-*.userprefs
-.vscode/
+# Ignore publish profiles
+*.pubxml
+*.Publish.xml
 
-# Other common ignore patterns
-*.exe
-*.dll
-*.pdb
-*.cache
+# Ignore logs
 *.log
+
+# Ignore any backup files
+*.bak
