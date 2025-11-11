@@ -42,7 +42,7 @@ namespace LeetCodePractice
 
 
             //Single Inheritance
-               
+
             FileLogger filelogger = new FileLogger();
             filelogger.File("While saving the File Failed");
 
@@ -54,7 +54,7 @@ namespace LeetCodePractice
             contactor.contactor("sangeeth");
 
             //Encapsulation
-             Encap encapsulation = new Encap();
+            Encap encapsulation = new Encap();
             encapsulation.Name = "sangs";
             encapsulation.Employee = "sangeeth@email.com";
 
@@ -64,13 +64,18 @@ namespace LeetCodePractice
             payment.pay(10000);
             payment.paymentmessage("Amount paid");
 
-             
 
+            //LeetCode Problems
             Easy easy = new Easy();
             easy.ScoreofString("hello");
             easy.LastWord("Hello World");
             easy.reverse("zaza");
-           
+            int[] nums = { 1, 2, 2, 3, 3, 3, 3, 4 };
+            int K = 2;
+            easy.sumofelements(nums, K);
+
+
+
         }
     }
 }

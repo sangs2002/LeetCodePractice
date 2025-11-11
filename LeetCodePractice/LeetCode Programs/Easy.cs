@@ -1,4 +1,7 @@
-﻿namespace LeetCodePractice.LeetCode_Programs
+﻿using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace LeetCodePractice.LeetCode_Programs
 {
     public class Easy
     {
@@ -153,6 +156,75 @@
 
 
         }
+        #endregion
+
+        #region 3712. Sum of Elements With Frequency Divisible by K
+
+        //Example 1:
+
+        //Input: nums = [1, 2, 2, 3, 3, 3, 3, 4], k = 2
+
+        //Output: 16
+
+        //Explanation:
+
+        //The number 1 appears once(odd frequency).
+        //The number 2 appears twice(even frequency).
+        //The number 3 appears four times(even frequency).
+        //The number 4 appears once(odd frequency).
+        //So, the total sum is 2 + 2 + 3 + 3 + 3 + 3 = 16.
+
+        //Example 2:
+
+        //Input: nums = [1, 2, 3, 4, 5], k = 2
+
+        //Output: 0
+
+        //Explanation:
+
+        //There are no elements that appear an even number of times, so the total sum is 0.
+
+
+        public void sumofelements(int[] nums, int K)
+        {
+
+
+            int count = 0;
+
+            HashSet<int> h = new HashSet<int>(nums);
+
+            int p = 0;
+
+            foreach (int k in h)
+            {
+                int cnt = 0;
+                foreach (int x in nums)
+                {
+
+                    if(x == k)
+                    {
+                        cnt++;
+                    }
+                }
+
+                if(cnt % K == 0)
+                {
+                    p += k * cnt;
+
+
+                }
+
+
+            }
+
+            Console.WriteLine(p);
+
+
+
+
+        }
+
+
         #endregion
 
     }
