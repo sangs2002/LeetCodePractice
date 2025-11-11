@@ -1,5 +1,7 @@
 ﻿using LeetCodePractice.LeetCode_Programs;
 using LeetCodePractice.OOPS;
+using static LeetCodePractice.OOPS.Abstraction;
+using static LeetCodePractice.OOPS.Encapsulation;
 using static LeetCodePractice.OOPS.MethodOverLoading;
 using static LeetCodePractice.OOPS.MethodOverriding;
 using static LeetCodePractice.OOPS.Multi_Level_Inheritance;
@@ -50,6 +52,19 @@ namespace LeetCodePractice
             contactor.ceo("sangs");
             contactor.employee("sangs bro");
             contactor.contactor("sangeeth");
+
+            //Encapsulation
+             Encap encapsulation = new Encap();
+            encapsulation.Name = "sangs";
+            encapsulation.Employee = "sangeeth@email.com";
+
+
+            //Abstraction
+            Payment payment = new Paypal();
+            payment.pay(10000);
+            payment.paymentmessage("Amount paid");
+
+             
 
             Easy easy = new Easy();
             easy.ScoreofString("hello");
