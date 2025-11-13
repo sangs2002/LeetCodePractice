@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using static LeetCodePractice.Linq.ForReference;
 
 namespace LeetCodePractice.Linq
 {
     public class LinqQueries
     {
-        public class Employee
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Department { get; set; }
-            public double Salary { get; set; }
-            public DateTime JoiningDate { get; set; }
-            public List<string> Skills { get; set; }
-        }
-
         public static void Run()
         {
             var employees = new List<Employee>
@@ -34,6 +22,54 @@ namespace LeetCodePractice.Linq
             {
                 Console.WriteLine($"{emp.Name} - {emp.Department} - {emp.Salary}");
             }
+
+
+            //✅ Question 1: Filtering
+
+            //Get all employees who belong to the IT department and have salary greater than 55,000.
+
+            //Expected output:
+            //Arun, Chitra
+
+            var filtering = employees.Where(g => g.Department == "IT" && g.Salary > 55000).ToList();
+
+            foreach (var emp in filtering)
+            {
+                Console.WriteLine($"{emp.Name}");
+            }
+
+
+            //✅ Question 2: Sorting
+
+            //Sort employees by salary descending, then by name ascending.
+
+            //Expected output order:
+            //Deepa → Chitra → Arun → Eshwar → Bala
+
+            var sorting = employees.OrderBy(e => e.Name).OrderByDescending(highPaid => highPaid.Salary).ToList();
+
+            foreach (var emp in sorting)
+            {
+                Console.WriteLine($"Soring order is : {emp.Name}");
+            }
+
+
+            //✅ Question 3: Projection
+
+            //Select only employee names and their departments.
+
+            var projection = employees.Select(g=>new
+            {
+                name = g.Name,
+                Department = g.Department,
+            }).ToList();
+
+            foreach (var emp in projection)
+            {
+                Console.WriteLine($"Projection is : {emp}");
+            }
+
+
         }
     }
 }

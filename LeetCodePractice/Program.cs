@@ -1,5 +1,5 @@
 ﻿using LeetCodePractice.LeetCode_Programs;
-using LeetCodePractice.OOPS;
+using LeetCodePractice.Linq;
 using static LeetCodePractice.OOPS.Abstraction;
 using static LeetCodePractice.OOPS.Encapsulation;
 using static LeetCodePractice.OOPS.MethodOverLoading;
@@ -73,7 +73,10 @@ namespace LeetCodePractice
             int[] nums = { 1, 2, 2, 3, 3, 3, 3, 4 };
             int K = 2;
             easy.sumofelements(nums, K);
+            easy.max69(9669);
 
+            //LinqQueries
+            LinqQueries.Run();            
 
 
         }
