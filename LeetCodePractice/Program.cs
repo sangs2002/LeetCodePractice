@@ -75,6 +75,12 @@ namespace LeetCodePractice
             easy.sumofelements(nums, K);
             easy.max69(9669);
 
+            int[] nums1 = [1, 3, 4];
+            int[] nums3 = [1, 3, 4];
+            int k = 1;
+
+            easy.goodpairs(nums1,nums3,k);
+
             //LinqQueries
             LinqQueries.Run();            
 

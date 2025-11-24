@@ -295,12 +295,50 @@
             }
 
             Console.WriteLine(int.Parse(new string(chars)));
+        }
 
 
+        #endregion
+
+
+        #region 3162.Find the Number of Good Pairs I
+
+        //Input: nums1 = [1, 3, 4], nums2 = [1, 3, 4], k = 1
+
+        //Output: 5
+ 
+        //Explanation:
+
+        //The 5 good pairs are(0, 0), (1, 0), (1, 1), (2, 0), and(2, 2).
+
+        public void goodpairs(int[] nums1,int[] nums3, int k)
+        {
+
+
+            int count = 0;
+
+
+            foreach(int x in nums1)
+            {
+
+                foreach(int y in nums3)
+                {
+                    if(x % (y * k) ==0)
+                    {
+                        count++;
+                    } 
+                }
+            }
+
+            Console.WriteLine($"GoodPair 1 count is {count}");
+        }
+            
 
             #endregion
 
 
+
+
+
         }
     }
-}
