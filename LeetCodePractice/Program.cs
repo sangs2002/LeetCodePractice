@@ -9,82 +9,82 @@ using static LeetCodePractice.OOPS.SingleInheritance;
 
 namespace LeetCodePractice
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+    //public class Program
+    //{
+    //    //public static void Main(string[] args)
+    //    //{
 
-            PaymentMethod paymentMethod = new UPIPayment();
-            paymentMethod.Pay(1000);
-
-
-            Notification notification = new Whatsapp();
-            notification.Notify("sangs");
-
-            Notification notification1 = new Notification();
-            notification1.Notify("malu");
+    //    //    PaymentMethod paymentMethod = new UPIPayment();
+    //    //    paymentMethod.Pay(1000);
 
 
-            OrderService orderService = new OrderService();
+    //    //    Notification notification = new Whatsapp();
+    //    //    notification.Notify("sangs");
 
-            orderService.PlaceOrder(1);
-
-
-            OrderService orderServices = new OrderService();
-
-            orderService.PlaceOrder(1, 2);
+    //    //    Notification notification1 = new Notification();
+    //    //    notification1.Notify("malu");
 
 
+    //    //    OrderService orderService = new OrderService();
 
-            OrderService orderServices2 = new OrderService();
-
-            orderService.PlaceOrder(new List<Product> { });
-
-
-            //Single Inheritance
-
-            FileLogger filelogger = new FileLogger();
-            filelogger.File("While saving the File Failed");
-
-            //Mutilevel Inheritance
-
-            Contactor contactor = new Contactor();
-            contactor.ceo("sangs");
-            contactor.employee("sangs bro");
-            contactor.contactor("sangeeth");
-
-            //Encapsulation
-            Encap encapsulation = new Encap();
-            encapsulation.Name = "sangs";
-            encapsulation.Employee = "sangeeth@email.com";
+    //    //    orderService.PlaceOrder(1);
 
 
-            //Abstraction
-            Payment payment = new Paypal();
-            payment.pay(10000);
-            payment.paymentmessage("Amount paid");
+    //    //    OrderService orderServices = new OrderService();
+
+    //    //    orderService.PlaceOrder(1, 2);
 
 
-            //LeetCode Problems
-            Easy easy = new Easy();
-            easy.ScoreofString("hello");
-            easy.LastWord("Hello World");
-            easy.reverse("zaza");
-            int[] nums = { 1, 2, 2, 3, 3, 3, 3, 4 };
-            int K = 2;
-            easy.sumofelements(nums, K);
-            easy.max69(9669);
 
-            int[] nums1 = [1, 3, 4];
-            int[] nums3 = [1, 3, 4];
-            int k = 1;
+    //    //    OrderService orderServices2 = new OrderService();
 
-            easy.goodpairs(nums1,nums3,k);
-
-            //LinqQueries
-            LinqQueries.Run();            
+    //    //    orderService.PlaceOrder(new List<Product> { });
 
 
-        }
-    }
+    //    //    //Single Inheritance
+
+    //    //    FileLogger filelogger = new FileLogger();
+    //    //    filelogger.File("While saving the File Failed");
+
+    //    //    //Mutilevel Inheritance
+
+    //    //    Contactor contactor = new Contactor();
+    //    //    contactor.ceo("sangs");
+    //    //    contactor.employee("sangs bro");
+    //    //    contactor.contactor("sangeeth");
+
+    //    //    //Encapsulation
+    //    //    Encap encapsulation = new Encap();
+    //    //    encapsulation.Name = "sangs";
+    //    //    encapsulation.Employee = "sangeeth@email.com";
+
+
+    //    //    //Abstraction
+    //    //    Payment payment = new Paypal();
+    //    //    payment.pay(10000);
+    //    //    payment.paymentmessage("Amount paid");
+
+
+    //    //    //LeetCode Problems
+    //    //    Easy easy = new Easy();
+    //    //    easy.ScoreofString("hello");
+    //    //    easy.LastWord("Hello World");
+    //    //    easy.reverse("zaza");
+    //    //    int[] nums = { 1, 2, 2, 3, 3, 3, 3, 4 };
+    //    //    int K = 2;
+    //    //    easy.sumofelements(nums, K);
+    //    //    easy.max69(9669);
+
+    //    //    int[] nums1 = [1, 3, 4];
+    //    //    int[] nums3 = [1, 3, 4];
+    //    //    int k = 1;
+
+    //    //    easy.goodpairs(nums1,nums3,k);
+
+    //    //    //LinqQueries
+    //    //    LinqQueries.Run();            
+
+
+    //    //}
+    //}
 }
