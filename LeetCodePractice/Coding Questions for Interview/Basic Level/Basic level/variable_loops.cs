@@ -11,7 +11,7 @@
             {
                 Console.WriteLine($"{EvenOrOdd} is Even Number");
             }
-            else if(EvenOrOdd % 2 != 0)
+            else if (EvenOrOdd % 2 != 0)
             {
                 Console.WriteLine($"{EvenOrOdd} is Odd Number");
             }
@@ -28,7 +28,7 @@
 
             int largest = k;
 
-            if(p > largest)
+            if (p > largest)
             {
                 largest = p;
 
@@ -47,7 +47,7 @@
 
         public void print100(int n)
         {
-            for(int i = 1; i <=n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 Console.WriteLine($"numbers from 1 to 100 using loops is {i}");
             }
@@ -60,7 +60,7 @@
         {
             int k = 0;
 
-            for(int i = 1;i <=n;i++)
+            for (int i = 1; i <= n; i++)
             {
                 k = k + i;
             }
@@ -76,10 +76,10 @@
 
             int digit;
             int temp = 0;
-            while (k >0)
+            while (k > 0)
             {
                 digit = k % 10;
-                 temp = (temp * 10) + digit;
+                temp = (temp * 10) + digit;
                 k = k / 10;
             }
 
@@ -87,5 +87,89 @@
         }
 
         #endregion
+
+        #region Check if a number is prime.
+
+        public void primenumber(int n)
+        {
+
+            int temp = 0;
+
+            for (int i = 2; i < n / 2; i++)
+            {
+
+                if (n % i == 0)
+                {
+
+                    temp++;
+                    break;
+
+                }
+            }
+
+            if (temp == 0)
+            {
+                Console.WriteLine($"{n} is a prime Number");
+
+            }
+            else
+            {
+                Console.WriteLine($"{n} is not a prime Number");
+
+            }
+        }
+        #endregion
+
+        #region Print Fibonacci series up to N terms.
+
+        public void fibonacci(int n)
+        {
+            int cur = 0;
+
+            int pre1 = 1;
+
+            int pre2 = 0;
+
+
+            for (int i = 0; i < n; i++)
+            {
+                cur = pre1 + pre2;
+                pre1 = pre2;
+                pre2 = cur;
+
+
+                Console.WriteLine($"Fibanocci nummbers are :{cur}");
+
+
+            }
+
+
+        }
+        #endregion
+
+        #region Count digits in a number.
+
+
+        #endregion
+
+        #region Check if a character is vowel or consonant.
+
+        public void vowel(char n)
+        {
+
+            string j = "aeiou";
+
+            if (j.Contains(n))
+            {
+                Console.WriteLine( $"{n} character is vowel.");
+            }
+            else
+            {
+                Console.WriteLine($"{n} is an Consonants");
+            }
+        }
+
+        #endregion
+
     }
 }
