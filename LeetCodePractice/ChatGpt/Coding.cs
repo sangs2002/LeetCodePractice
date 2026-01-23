@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCodePractice.ChatGpt
 {
@@ -690,14 +689,14 @@ namespace LeetCodePractice.ChatGpt
 
             foreach (string word in array)
             {
-                for (int i = word.Length-1; i >= 0; i--)
+                for (int i = word.Length - 1; i >= 0; i--)
                 {
-                    
-                     SB.Append(word[i]);
+
+                    SB.Append(word[i]);
 
                 }
 
-               SB.Append(" ");
+                SB.Append(" ");
 
             }
 
@@ -727,9 +726,9 @@ namespace LeetCodePractice.ChatGpt
             int temp = 0;
             int j = 0;
 
-            for (int i = 0;i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if(arr[i] != 0)
+                if (arr[i] != 0)
                 {
                     temp = arr[i];
                     arr[i] = arr[j];
@@ -745,6 +744,352 @@ namespace LeetCodePractice.ChatGpt
 
         #endregion
 
+        #region Check if a string of brackets is valid.(STACK)
+
+        //Input:
+
+        //"({[]})"
+
+
+        //Output:
+
+        //true
+
+        public void brackets(string s)
+        {
+
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char ch in s)
+            {
+
+                if (ch == '[' || ch == '{' || ch == '(')
+                {
+                    stack.Push(ch);
+                }
+
+                else
+                {
+                    if (stack.Count == 0)
+                    {
+                        Console.WriteLine(false);
+                    }
+
+                    char top = stack.Pop();
+
+                    if ((ch == ')' && top != '(') ||
+                (ch == '}' && top != '{') ||
+                (ch == ']' && top != '['))
+                    {
+                        Console.WriteLine(false);
+                    }
+
+
+                }
+            }
+
+            bool K = stack.Count == 0;
+
+            Console.WriteLine(K);
+
+
+
+        }
+
+        #endregion
+
+        #region Find the maximum sum of a subarray of size k.
+
+        //Input:
+
+        //[2, 1, 5, 1, 3, 2], k = 3
+
+
+        //Output:
+
+        //9
+
+        public void maxsumsubarray(int[] arr, int k)
+        {
+
+
+            //int right = 1;
+
+            int sum = 0;
+            int right = 0;
+
+            List<int> list = new List<int>();
+
+            int length = arr.Length;
+
+            for (int left = 0; left < length; left++)
+            {
+
+                if (right >= 3)
+                {
+                    k++;
+                }
+
+                if (left == arr.Length - 2)
+                {
+                    break;
+                }
+
+                for (right = left + 1; right < k; right++)
+                {
+
+
+
+                    sum = arr[left] + arr[right];
+                    right++;
+                    sum += arr[right];
+                    list.Add(sum);
+
+                    break;
+
+                }
+
+            }
+
+
+
+            int max = list.Max();
+
+            Console.WriteLine(max);
+
+
+        }
+
+        public void MaxSumSubarray(int[] arr, int k)
+        {
+            int windowSum = 0;
+            int maxSum = 0;
+
+            // Step 1: First window
+            for (int i = 0; i < k; i++)
+            {
+                windowSum += arr[i];
+            }
+
+            maxSum = windowSum;
+
+            // Step 2: Slide window
+            for (int i = k; i < arr.Length; i++)
+            {
+                windowSum = windowSum + arr[i] - arr[i - k];
+                maxSum = Math.Max(maxSum, windowSum);
+            }
+
+            Console.WriteLine(maxSum);
+        }
+
+
+        #endregion
+
+        #region Find the majority element (appears more than n/2 times).
+
+        //Input:
+
+        //[3, 2, 3]
+
+        //Output:
+
+        //3
+
+        public void majorityelement(int[] arr)
+        {
+
+            HashSet<int> set = new HashSet<int>();
+
+            int k = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (set.Contains(arr[i]))
+                {
+                    k = arr[i];
+
+                }
+                else
+                {
+                    set.Add(arr[i]);
+                }
+            }
+
+            Console.WriteLine(k);
+
+
+
+        }
+
+        //I use the Boyer–Moore Voting Algorithm.
+        // Since the majority element appears more than n/2 times, it cannot be completely canceled out by other elements.
+
+        public void MajorityElement(int[] arr)
+        {
+            int count = 0;
+            int candidate = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (count == 0)
+                {
+                    candidate = arr[i];
+                }
+
+                if (arr[i] == candidate)
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                }
+            }
+
+            Console.WriteLine(candidate);
+        }
+
+        #endregion
+
+        #region Remove adjacent duplicates in a string.
+
+        //Input:
+
+        //"abbaca"
+
+
+        //Output:
+
+        //"ca"
+
+        public void RemoveAdjacentDuplicates(string s)
+        {
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char c in s)
+            {
+                if (stack.Count > 0 && stack.Peek() == c)
+                {
+                    stack.Pop(); // remove adjacent duplicate
+                }
+                else
+                {
+                    stack.Push(c);
+                }
+            }
+
+            // Stack is LIFO, reverse it
+            char[] result = stack.ToArray();
+            Array.Reverse(result);
+
+            Console.WriteLine(new string(result));
+        }
+
+
+        #endregion
+
+        #region Problem: Find the First Unique Element in an Array
+
+
+        //Input:
+
+        //[4, 5, 1, 2, 1, 4]
+
+
+        //Output:
+
+        //5
+
+        public void FirstUnique(int[] arr)
+        {
+
+            HashSet<int> unique = new HashSet<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (unique.Contains(arr[i]))
+                {
+                    unique.Remove(arr[i]);
+
+                }
+
+                else
+                {
+                    unique.Add(arr[i]);
+                }
+            }
+
+            Console.WriteLine(unique.FirstOrDefault());
+        }
+
+        public void FirstUnique2(int[] arr)
+        {
+            Dictionary<int, int> freq = new Dictionary<int, int>();
+
+            // Step 1: Count frequency
+            foreach (int num in arr)
+            {
+                if (freq.ContainsKey(num))
+                    freq[num]++;
+                else
+                    freq[num] = 1;
+            }
+
+            // Step 2: Find first unique (preserve order)
+            foreach (int num in arr)
+            {
+                if (freq[num] == 1)
+                {
+                    Console.WriteLine(num);
+                    return;
+                }
+            }
+
+            Console.WriteLine("No unique element found");
+        }
+
+
+        #endregion
+
+        #region Rotate an array to the right by k steps.
+
+        //Input:
+
+        //[1, 2, 3, 4, 5, 6, 7], k = 3
+        //Output:
+
+        //[5, 6, 7, 1, 2, 3, 4]
+
+        public void rotate(int[] arr, int k)
+        {
+
+            Stack<int> stack = new Stack<int>();
+            List<int> list = new List<int>();
+            
+
+            foreach (int num in arr)
+            {
+                stack.Push(num);
+            }
+
+            for (int i = 0; i < k-1; i++)
+            {
+                list.Add(stack[i]);
+
+                stack.Pop();
+
+            }
+
+            string l = String.Join(",", stack.ToArray());
+
+            Console.WriteLine(l);
+        }
+
+        #endregion
+
 
     }
+
 }
+

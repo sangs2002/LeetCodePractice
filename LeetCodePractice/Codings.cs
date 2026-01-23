@@ -195,11 +195,48 @@ namespace LeetCodePractice
 
             //coding.ReverseWord(s);
 
+            //Console.WriteLine("Move all 0s to the end of the array while maintaining the order of non-zero elements.");
 
-            Console.WriteLine("Move all 0s to the end of the array while maintaining the order of non-zero elements.");
+            //int[] arr = [0, 1, 0, 3, 12];
+            //coding.moveall(arr);
 
-            int[] arr = [0, 1, 0, 3, 12];
-            coding.moveall(arr);
+            //Console.WriteLine("VALID PARENTHESES");
+
+            //String S = "({[]})";
+
+            //coding.brackets(S);
+
+
+            //Console.WriteLine("Find the maximum sum of a subarray of size k.");
+
+            //int[] arr = { 2, 1, 5, 1, 3, 2 };
+            //int k = 3;
+            //coding.maxsumsubarray(arr, k);
+            //coding.MaxSumSubarray(arr, k);
+
+
+            //Console.WriteLine("Find the majority element (appears more than n/2 times).");
+
+            //int[] arr = { 3, 2, 3 };
+            //coding.majorityelement(arr);
+
+
+            //Console.WriteLine("Remove adjacent duplicates in a string.");
+
+            //string s = "abbaca";
+            //coding.RemoveAdjacentDuplicates(s);
+
+
+            //Console.WriteLine("Find the First Unique Element in an Array");
+
+            //int[] arr = { 4, 5, 1, 2, 1, 4 };
+            //coding.FirstUnique(arr);
+
+            Console.WriteLine("Rotate an array to the right by k steps.");
+
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            int k = 3;
+            coding.rotate(arr,k);
 
 
         }
